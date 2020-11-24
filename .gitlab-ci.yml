@@ -23,6 +23,7 @@ include:
   - template: SAST.gitlab-ci.yml
 
 jest:
+  <<: *default_before_script
   stage: test
   script:
     - yarn test
