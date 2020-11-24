@@ -22,6 +22,16 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
 
+jest:
+  stage: test
+  script:
+    - yarn test
+  artifacts:
+    paths:
+      - test-report.xml
+    reports:
+      junit: test-report.xml
+
 build:
   <<: *default_before_script
   stage: build
