@@ -33,13 +33,12 @@ describe('normalize', () => {
     ${true}
     ${{ an: 'object' }}
     ${new Date()}
-    ${function () {}}
+    ${() => {
+  /* noop */
+}}
     ${/hello/}
     ${new Map()}
-  `(
-    'returns an invalid Moment object when $input is provided',
-    ({ input, expected }) => {
-      expect(normalize(input).isValid()).toBe(false);
-    },
-  );
+  `('returns an invalid Moment object when $input is provided', ({ input }) => {
+    expect(normalize(input).isValid()).toBe(false);
+  });
 });

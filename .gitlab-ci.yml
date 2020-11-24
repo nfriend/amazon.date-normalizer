@@ -23,6 +23,12 @@ include:
   - template: Dependency-Scanning.gitlab-ci.yml
   - template: SAST.gitlab-ci.yml
 
+eslint:
+  <<: *default_before_script
+  stage: test
+  script:
+    - yarn lint
+
 jest:
   <<: *default_before_script
   stage: test
