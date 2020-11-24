@@ -26,6 +26,6 @@
     "lodash.isstring": "^4.0.1"
   },
   "peerDependencies": {
-    "moment": "^2.29.1"
+    "moment": "2.29.1"
   }
 }
