@@ -1,7 +1,7 @@
 default:
   image: node:latest
 
-.default_before_script:
+.default_before_script: &default_before_script
   before_script:
     - yarn install --frozen-lockfile --cache-folder .yarn
   cache:
