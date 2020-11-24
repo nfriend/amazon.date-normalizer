@@ -14,6 +14,7 @@ workflow:
 
 stages:
   - build
+  - release
 
 build:
   stage: build
@@ -23,3 +24,10 @@ build:
   artifacts:
     paths:
       - build/
+
+publish:
+  stage: release
+  script:
+    - yarn semantic-release
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
