@@ -1,0 +1,10 @@
+{
+  "name": "@nfriend/amazon.date-normalizer",
+  "version": "0.1.0",
+  "description": "A JavaScript module that converts an AMAZON.DATE into a Moment.js object",
+  "main": "build/index.js",
+  "repository": "git@gitlab.com:nfriend/amazon.date-normalizer.git",
+  "author": "Nathan Friend <nathan@gitlab.com>",
+  "license": "MIT",
+  "private": false
+}
