@@ -11,9 +11,8 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@semantic-release/gitlab": "^6.0.5",
+    "@semantic-release/gitlab": "https://github.com/nfriend/gitlab.git#nfriend-testing-400-error",
     "@tsconfig/node12": "^1.0.7",
-    "semantic-release": "^17.3.0",
     "typescript": "^4.1.2"
   }
 }
