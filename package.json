@@ -1,0 +1,19 @@
+{
+  "name": "@nfriend/amazon.date-normalizer",
+  "version": "0.1.0",
+  "description": "A JavaScript module that converts an AMAZON.DATE into a Moment.js object",
+  "main": "build/index.js",
+  "repository": "https://gitlab.com/nfriend/amazon.date-normalizer.git",
+  "author": "Nathan Friend <nathan@gitlab.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@semantic-release/gitlab": "https://github.com/nfriend/gitlab.git#nfriend-testing-400-error",
+    "@tsconfig/node12": "^1.0.7",
+    "semantic-release": "^17.3.0",
+    "typescript": "^4.1.2"
+  }
+}

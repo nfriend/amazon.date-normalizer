@@ -1,0 +1,41 @@
+default:
+  image: node:latest
+
+.default_before_script: &default_before_script
+  before_script:
+    - yarn install --frozen-lockfile --cache-folder .yarn
+  cache:
+    paths:
+      - node_modules/
+      - .yarn
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH
+
+stages:
+  - test
+  - build
+  - release
+
+include:
+  - template: Dependency-Scanning.gitlab-ci.yml
+  - template: SAST.gitlab-ci.yml
+
+build:
+  <<: *default_before_script
+  stage: build
+  needs: []
+  script:
+    - yarn build
+  artifacts:
+    paths:
+      - build/
+
+publish:
+  <<: *default_before_script
+  stage: release
+  script:
+    - yarn semantic-release --debug
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
