@@ -36,6 +36,6 @@ publish:
   <<: *default_before_script
   stage: release
   script:
-    - yarn semantic-release
+    - yarn semantic-release --debug
   rules:
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
