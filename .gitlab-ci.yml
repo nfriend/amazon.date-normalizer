@@ -5,6 +5,7 @@ default:
   before_script:
     - yarn install --frozen-lockfile --cache-folder .yarn
     - yarn add moment@2.29.1
+    - echo '//gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/:_authToken=${CI_JOB_TOKEN}' | tee --append .npmrc
   cache:
     paths:
       - node_modules/
@@ -18,6 +19,12 @@ stages:
   - test
   - build
   - release
+
+variables:
+  GITLAB_NPM_TOKEN: $CI_JOB_TOKEN
+  GITLAB_NPM_CONFIG_REGISTRY: https://gitlab.com/api/v4/projects/${CI_PROJECT_ID}/packages/npm/
+  PUBLIC_NPM_TOKEN: $NPM_TOKEN
+  PUBLIC_NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
 
 include:
   - template: Dependency-Scanning.gitlab-ci.yml
