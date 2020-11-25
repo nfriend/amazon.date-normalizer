@@ -1,6 +1,6 @@
 {
   "name": "@nfriend/amazon.date-normalizer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A JavaScript module that converts an AMAZON.DATE into a Moment.js object",
   "main": "build/index.js",
   "types": "build/index.d.ts",
