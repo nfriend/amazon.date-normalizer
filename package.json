@@ -3,6 +3,7 @@
   "version": "1.1.0",
   "description": "A JavaScript module that converts an AMAZON.DATE into a Moment.js object",
   "main": "build/index.js",
+  "types": "build/index.d.ts",
   "repository": "https://gitlab.com/nfriend/amazon.date-normalizer.git",
   "author": "Nathan Friend <nathan@gitlab.com>",
   "license": "MIT",

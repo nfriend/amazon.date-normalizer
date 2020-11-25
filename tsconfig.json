@@ -5,7 +5,8 @@
     "baseUrl": ".",
     "strictNullChecks": false,
     "sourceMap": true,
-    "inlineSources": true
+    "inlineSources": true,
+    "declaration": true
   },
   "include": ["src"],
   "exclude": ["**/__mocks__/**"]
