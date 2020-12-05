@@ -24,7 +24,7 @@ export const normalize = (amazonDate: string): Moment => {
 
     // just replace the X with a 0 to signify
     // the start of the decade
-    return moment(amazonDate.replace('X', '0'));
+    return moment(amazonDate.replace('X', '0'), 'YYYY');
   } else if (/^\d{4}-(WI|SP|SU|FA)$/.test(amazonDate)) {
     // for seasons, eventDate will look like '2018-SP'
 
@@ -35,22 +35,29 @@ export const normalize = (amazonDate: string): Moment => {
         .replace(/SP$/, '03-21')
         .replace(/SU$/, '06-21')
         .replace(/FA$/, '09-21'),
+      'YYYY-MM-DD',
     );
   } else if (/^\d{4}-\d{2}-XX$/.test(amazonDate)) {
     // some locales return a "month" value - like "next month" -
     // like "2018-11-XX"
 
-    return moment(amazonDate.replace(/XX$/, '01'));
+    return moment(amazonDate.replace(/XX$/, '01'), 'YYYY-MM-DD');
   } else if (/^\d{4}-XX-XX$/.test(amazonDate)) {
     // some locales return a "year" value - like "next year" -
     // like "2018-XX-XX"
 
-    return moment(amazonDate.replace(/XX-XX$/, '01-01'));
+    return moment(amazonDate.replace(/XX-XX$/, '01-01'), 'YYYY-MM-DD');
   } else if (amazonDate === 'PRESENT_REF') {
     // if the user said "now"
 
     // convert the date into the expected format
     return moment();
+  } else if (/^\d{4}-\d{2}-\d{2}$/.test(amazonDate)) {
+    // if the date is a standard YYYY-MM-DD
+
+    // force moment to parse it to avoid falling back to
+    // native Date parsing, which has timezone issues
+    return moment(amazonDate, 'YYYY-MM-DD');
   } else {
     return moment(amazonDate);
   }
