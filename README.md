@@ -4,6 +4,8 @@
 Status](https://gitlab.com/nfriend/amazon.date-normalizer/badges/master/pipeline.svg)](https://gitlab.com/nfriend/amazon.date-normalizer/-/pipelines/latest)
 [![Semantic Release
 Badge](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![NPM
+version](https://img.shields.io/npm/v/@nfriend/amazon.date-normalizer)](https://www.npmjs.com/package/@nfriend/amazon.date-normalizer)
 
 A JavaScript module that converts an
 [AMAZON.DATE](https://developer.amazon.com/en-US/docs/alexa/custom-skills/slot-type-reference.html#date)
@@ -11,10 +13,25 @@ into a [Moment.js](https://momentjs.com/) object.
 
 ## Installation
 
-This NPM module is hosted in [GitLab's Package
+This module is published to both [npmjs.com](https://www.npmjs.com/) and this
+project's [GitLab's Package
 registry](https://gitlab.com/nfriend/amazon.date-normalizer/-/packages).
 
-To use it, add the following to your project's `.yarnrc`:
+### Installing from npmjs.com
+
+```
+yarn add @nfriend/amazon.date-normalizer
+```
+
+or:
+
+```
+npm install --save @nfriend/amazon.date-normalizer
+```
+
+### Installing from the GitLab Package registry
+
+Add the following to your project's `.yarnrc`:
 
 ```
 "@nfriend:registry" "https://gitlab.com/api/v4/packages/npm/"
