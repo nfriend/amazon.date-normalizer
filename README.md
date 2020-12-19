@@ -101,6 +101,11 @@ deviceTimeZone = await upsServiceClient.getSystemTimeZone(
 // timezone, not just translated. So `translatedDate` will not refer
 // to the same moment in time as `eventDate`.
 const translatedDate = eventDate.clone().tz(deviceTimeZone, true);
+
+const keepOffset = true;
+
+// prints "2015-12-25T00:00:00.000-05:00"
+console.log(translatedDate.toISOString(keepOffset));
 ```
 
 ## Publishing
